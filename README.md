@@ -5,6 +5,7 @@
 Methods which are added:
 1) Email Login
 2) Google sign in
+3) Mobile No Otp Firebase Login
 
 
 ### Running the project:
