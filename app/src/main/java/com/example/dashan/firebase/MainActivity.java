@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -36,6 +37,9 @@ ProgressBar probar;
 
 FirebaseAuth.AuthStateListener mAuthListener;
 private SignInButton signin;
+private Button mobileLogin;
+//private Button facebookLogin;
+
 
 private GoogleApiClient googleApiClient;
 private static final int REQ_CODE=9001;
@@ -64,12 +68,18 @@ private String TAG="TAG";
         findViewById(R.id.textViewSignup).setOnClickListener(this);
         findViewById(R.id.login_button).setOnClickListener(this);
         findViewById(R.id.forgotpass).setOnClickListener(this);
+        mobileLogin=(Button) findViewById(R.id.mobile_login_btn);
+        mobileLogin.setOnClickListener(this);
+        //facebookLogin=(Button) findViewById(R.id.facebook_login);
 
         signin=(SignInButton) findViewById(R.id.google_login);
+
+
        // findViewById(R.id.google_login).setOnClickListener(this);
         mAuth=FirebaseAuth.getInstance();
 
         signin.setOnClickListener(this);
+        //MobileLogin.setOnClickListener(this);
         mAuthListener=new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -198,6 +208,7 @@ private String TAG="TAG";
 
     @Override
     public void onClick(View v) {
+
     switch (v.getId()){
         case R.id.textViewSignup:{
             //startActivity(new Intent(this,Signup.class));
@@ -220,6 +231,13 @@ private String TAG="TAG";
         case R.id.google_login:{
             //finish();
             signIn();
+            break;
+        }
+
+        case R.id.mobile_login_btn:{
+            finish();
+            Intent i=new Intent(this,MobileNumberLogin.class);
+            startActivity(i);
             break;
         }
     }

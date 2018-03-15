@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.dashan.firebase.MobileNumberLogin">
+
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <EditText
+            android:id="@+id/field_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:hint="Enter Mobile No"
+            android:inputType="textPhonetic"
+            android:paddingBottom="15dp"
+            android:textColor="@color/Blue"
+            android:textColorHint="@color/LightBlue" />
+
+        <EditText
+            android:id="@+id/field_verification_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:hint="Enter Otp"
+            android:inputType="textPassword"
+            android:paddingBottom="15dp"
+            android:textColor="@color/Blue"
+            android:textColorHint="@color/LightBlue" />
+
+        <Button
+            android:id="@+id/button_start_verification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="7dp"
+            android:background="@color/Blue"
+            android:text="Start Verification"
+            android:textAllCaps="false"
+            android:textColor="@color/White" />
+
+        <Button
+            android:id="@+id/button_verify_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/Blue"
+            android:fontFamily="sans-serif"
+            android:text="verify Phone"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/White" />
+
+        <Button
+            android:id="@+id/button_resend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Blue"
+            android:padding="15dp"
+            android:text="Resend"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/Wheat" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</LinearLayout>
